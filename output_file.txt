@@ -1,0 +1,61 @@
+Tokens:
+
+z : IDENTIFIER
+:= : SYMBOL
+0 : NUMBER
+; : SYMBOL
+x : IDENTIFIER
+:= : SYMBOL
+10 : NUMBER
+; : SYMBOL
+y : IDENTIFIER
+:= : SYMBOL
+0 : NUMBER
+; : SYMBOL
+while : KEYWORD
+x : IDENTIFIER
+- : SYMBOL
+y : IDENTIFIER
+do : KEYWORD
+z : IDENTIFIER
+:= : SYMBOL
+z : IDENTIFIER
++ : SYMBOL
+y : IDENTIFIER
+; : SYMBOL
+y : IDENTIFIER
+:= : SYMBOL
+y : IDENTIFIER
++ : SYMBOL
+1 : NUMBER
+endwhile : KEYWORD
+
+AST: 
+
+SYMBOL : ;
+	SYMBOL : ;
+		SYMBOL : ;
+			SYMBOL : :=
+				IDENTIFIER : z
+				NUMBER : 0
+			SYMBOL : :=
+				IDENTIFIER : x
+				NUMBER : 10
+		SYMBOL : :=
+			IDENTIFIER : y
+			NUMBER : 0
+	 : WHILE-LOOP
+		SYMBOL : -
+			IDENTIFIER : x
+			IDENTIFIER : y
+		SYMBOL : ;
+			SYMBOL : :=
+				IDENTIFIER : z
+				SYMBOL : +
+					IDENTIFIER : z
+					IDENTIFIER : y
+			SYMBOL : :=
+				IDENTIFIER : y
+				SYMBOL : +
+					IDENTIFIER : y
+					NUMBER : 1
